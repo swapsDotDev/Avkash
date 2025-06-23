@@ -1,0 +1,94 @@
+.footerbottomside {
+  padding-top: 1.5%;
+  padding-left: 9%;
+}
+
+.border-center {
+  border-right: 1px solid #000;
+}
+
+.border-center.dark {
+  border-right: 1px solid #D1D5DB;
+}
+
+.alert {
+  margin-left: 40%;
+}
+
+.popup {
+  margin-left: 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup.dark {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.payslip-card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.payslip-card.dark {
+  border: 1px solid #4B5563;
+  background-color: #1F2937;
+}
+
+.payslip-card h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #000;
+}
+
+.payslip-card.dark h2 {
+  color: #D1D5DB;
+}
+
+.payslip-card .info-item {
+  margin-bottom: 8px;
+}
+
+.payslip-card .info-label {
+  font-weight: bold;
+  color: #000;
+}
+
+.payslip-card.dark .info-label {
+  color: #D1D5DB;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 80px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-inner {
+  max-width: 60vw;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: auto;
+  border: 1px solid #ccc;
+}
+
+.popup-inner.dark {
+  background-color: #1F2937;
+  border: 1px solid #4B5563;
+}
+
+.payslipborder {
+  border-bottom: 1px solid #000;
+}
+
+.payslipborder.dark {
+  border-bottom: 1px solid #D1D5DB;
+}
+

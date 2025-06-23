@@ -1,0 +1,398 @@
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/violet.css';
+
+text.highcharts-credits {
+  display: none;
+}
+
+ul.recharts-default-legend1 {
+  display: none;
+}
+
+span.rt-TabsTriggerInner {
+  margin-bottom: -10px;
+}
+
+.rt-TabsTrigger:where([data-state='active'])::before{
+  margin-left: 30px;
+  margin-right: 15px;
+}
+
+.tsTabTrigger::before {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+
+#tablist {
+  box-shadow: none;
+}
+
+.profile-wrapper {  
+    position: absolute;
+    left :0;
+    top:9px;
+    margin:0 0 3px 3px;
+    width:30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header{
+    position: relative;
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top:0;
+  }
+  
+  .profile-image {
+    width:25px;
+    border-radius: 50%;
+  }
+  
+  .notification-item {
+    display: flex;
+    width: 270px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    
+    padding: 10px 0 5px 36px ;
+    position: relative;
+  }
+
+  body.modal-open {
+    overflow: visible !important;
+  }
+  .close-notification {
+    position: absolute;
+    right :0;
+    margin:3px;
+    margin-top: 2px;
+    color: #888;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .modal-wrapper {
+    position: relative;
+    z-index: 1000; 
+  }
+
+  .Nomsgs{
+    position: absolute;
+    top:50%;
+    left: 28%;
+  }
+
+.DropdownMenuContent,
+.DropdownMenuSubContent {
+  min-width: 220px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  z-index: 9999 !important;
+  position: relative !important;
+}
+
+.DropdownMenuContent[data-side='top'],
+.DropdownMenuSubContent[data-side='top'] {
+  animation-name: slideDownAndFade;
+}
+.DropdownMenuContent[data-side='right'],
+.DropdownMenuSubContent[data-side='right'] {
+  animation-name: slideLeftAndFade;
+}
+.DropdownMenuContent[data-side='bottom'],
+.DropdownMenuSubContent[data-side='bottom'] {
+  animation-name: slideUpAndFade;
+}
+.DropdownMenuContent[data-side='left'],
+.DropdownMenuSubContent[data-side='left'] {
+  animation-name: slideRightAndFade;
+}
+
+.DropdownMenuItem,
+.DropdownMenuCheckboxItem,
+.DropdownMenuRadioItem,
+.DropdownMenuSubTrigger {
+  font-size: 13px;
+  line-height: 1;
+  color: var(--violet-11);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 5px;
+  position: relative;
+  padding-left: 25px;
+  user-select: none;
+  outline: none;
+}
+
+.DropdownMenuSubTrigger[data-state='open'] {
+  background-color: var(--violet-4);
+  color: var(--violet-11);
+}
+
+.DropdownMenuItem[data-disabled],
+.DropdownMenuCheckboxItem[data-disabled],
+.DropdownMenuRadioItem[data-disabled],
+.DropdownMenuSubTrigger[data-disabled] {
+  color: var(--mauve-8);
+  pointer-events: none;
+}
+
+.DropdownMenuItem[data-highlighted],
+.DropdownMenuCheckboxItem[data-highlighted],
+.DropdownMenuRadioItem[data-highlighted],
+.DropdownMenuSubTrigger[data-highlighted] {
+  background-color: var(--violet-9);
+  color: var(--violet-1);
+}
+
+.DropdownMenuLabel {
+  padding-left: 25px;
+  font-size: 12px;
+  line-height: 25px;
+  color: var(--mauve-11);
+}
+
+.DropdownMenuSeparator {
+  height: 1px;
+  background-color: var(--violet-6);
+  margin: 5px;
+}
+
+.DropdownMenuItemIndicator {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.DropdownMenuArrow {
+  fill: white;
+}
+
+.IconButton {
+  font-family: inherit;
+  border-radius: 100%;
+  height: 35px;
+  width: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--violet-11);
+  background-color: limegreen;
+}
+
+.RightSlot {
+  margin-left: auto;
+  padding-left: 20px;
+  color: var(--mauve-11);
+}
+[data-highlighted] > .RightSlot {
+  color: white;
+}
+[data-disabled] .RightSlot {
+  color: var(--mauve-8);
+}
+
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.ScrollAreaRoot {
+  height: 50vh;
+  min-width: 310px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px var(--black-a7);
+  background-color: white;
+}
+
+.ScrollAreaViewport {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.ScrollAreaScrollbar {
+  display: flex;
+  user-select: none;
+  touch-action: none;
+  padding: 2px;
+  background: var(--black-a6);
+  transition: background 160ms ease-out;
+}
+
+.ScrollAreaScrollbar:hover {
+  background: var(--black-a8);
+}
+
+.ScrollAreaScrollbar[data-orientation='vertical'] {
+  width: var(--scrollbar-size);
+}
+
+.ScrollAreaScrollbar[data-orientation='horizontal'] {
+  flex-direction: column;
+  height: var(--scrollbar-size);
+}
+
+.ScrollAreaThumb {
+  flex: 1;
+  background: var(--mauve-10);
+  border-radius: var(--scrollbar-size);
+  position: relative;
+}
+
+.ScrollAreaThumb::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.ScrollAreaCorner {
+  background: var(--black-a8);
+}
+
+.Text {
+  color: var(--violet-11);
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.Tag {
+  color: var(--mauve-12);
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 10px;
+  border-top: 1px solid var(--mauve-6);
+  padding-top: 10px;
+}
+
+
+.unavailable {
+  max-width: 120px;
+  max-height: 120px;
+  background-color: #848080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  color: white;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.popupcard {
+  width: 70%;
+  max-width: 750px;
+  padding: 20px;
+  position: relative;
+box-shadow: #888;
+}
+.popupscroll {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 20px;
+  background-color: #ccc;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.color{
+color: limegreen;
+}
+.images{
+   max-width: 120px;
+    max-height: 120px; 
+}
+.onleave{
+  backgroundColor:white;
+   borderRadius: 15px;
+   max-height: 80vh;
+   overflow-y: auto;
+  }
+  .onleavepopup {
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .onleavepopup:hover {
+    background-color: #f9f9f9;
+  }
+
+.sc-bcXHqe.bncmtB.react-search-box-dropdown {
+    display: none !important;
+}

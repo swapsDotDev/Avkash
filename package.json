@@ -1,0 +1,27 @@
+{
+  "name": "avkash",
+  "version": "1.0.0",
+  "description": "Avkash is a comprehensive project that integrates both a Leave Portal System and HR Management System. The system provides various functionalities for both users and administrators to efficiently manage leave requests, employee information, and organizational processes. Avkash aims to provide a centralized platform for efficient organizational management.",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm install --prefix client && cd server && make install",
+    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "client": "npm --prefix client start",
+    "server": "cd server && make run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/positsource/Avkash.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/positsource/Avkash/issues"
+  },
+  "homepage": "https://github.com/positsource/Avkash#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

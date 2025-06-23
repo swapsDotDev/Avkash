@@ -1,0 +1,264 @@
+{
+  "user_feedback": {
+    "bsonType": "object",
+    "properties": {
+      "user_id": {"bsonType": "string"},
+      "email": {"bsonType": "string"},
+      "feedback": {"bsonType": "string"},
+      "timestamp":{"bsonType": "string"},
+      "reply":{"bsonType": "string"},
+      "is_notified": {"type": "boolean" } ,
+      "clear":{"type": "boolean" }
+    },
+    "required": ["user_id", "email","feedback","timestamp"]
+  },
+  "user_collection": {
+    "bsonType": "object",
+    "properties": {
+      "user_id": {"bsonType": "string"},
+      "gender": {"bsonType": "string"},
+      "role": {"bsonType": "string"},
+      "department": {"bsonType": "string"},
+      "date_of_joining": {"bsonType": "date"},
+      "designation": {"bsonType": "string"},
+      "account_number": {"bsonType": "string"},
+      "pan_number" : {"bsonType": "string"},
+      "ctc" : {"bsonType": "double"},
+      "bank_name": {"bsonType": "string"},
+      "country_code": {"bsonType": "string"},
+      "date_of_birth": {"bsonType": "date"},
+      "contact_no" : {"bsonType": "string"},
+      "user_name" : {"bsonType": "string"},
+      "imageUrl": {"bsonType":"string"},
+      "leave_status" : {"bsonType": "string" ,  "enum": ["pending", "accepted", "rejected" , "in_review"]}
+    },
+    "required": ["user_id","username"] 
+  },
+  "department_collection": {
+    "bsonType": "object",
+    "properties": {
+      "department_name": {"bsonType": "string"},
+      "manager": {"bsonType": "string"}
+    },
+    "required": ["department_name", "manager"]
+  },
+  "leave_info_collection": {
+    "bsonType": "object",
+    "properties": {
+      "user_id": {"bsonType": "string"},
+      "department": {"bsonType": "string"},
+      "total_leaves": {"bsonType": "int"},
+      "taken_leaves": {"bsonType": "int"},
+      "leave_balance": {"bsonType": "int"},
+      "leave_type": {"bsonType": "string"},
+      "start_date": {"bsonType": "date"},
+      "end_date": {"bsonType": "date"}
+    },
+    "required": ["user_id", "department", "total_leaves", "taken_leaves", "leave_balance", "leave_type", "start_date", "end_date"]
+  },
+  "reaction_collection": {
+    "bsonType": "object",
+    "properties": {
+      "user_id": {"bsonType": "string"},
+      "first_name": {"bsonType": "string"},
+      "last_name": {"bsonType": "string"},
+      "email": {"bsonType": "string"}
+    },
+    "required": ["user_id", "first_name", "last_name", "email"]
+  },
+  "data_collection": {
+    "bsonType": "object",
+    "properties": {
+      "user_id": {"bsonType": "string"},
+      "first_name": {"bsonType": "string"},
+      "last_name": {"bsonType": "string"},
+      "email": {"bsonType": "string"}
+    },
+    "required": ["user_id", "first_name", "last_name", "email"]
+  },
+  "automation_collection": {
+    "bsonType": "object",
+    "properties": {
+      "user_id": {"bsonType": "string"},
+      "first_name": {"bsonType": "string"},
+      "last_name": {"bsonType": "string"},
+      "email": {"bsonType": "string"}
+    },
+    "required": ["user_id", "first_name", "last_name", "email"]
+  },
+  "payslip_collection": {
+    "bsonType": "object",
+    "properties": {
+      "user_id": {"bsonType": "string"},
+      "username": {"bsonType": "string"},
+      "designation": {"bsonType": "string"},
+      "lop": {"bsonType": "double"},
+      "paiddays": {"bsonType": "double"},
+      "total_hours": {"bsonType": "double"},
+      "basic_salary": {"bsonType": "double"},
+      "overtime": {"bsonType": "double"},
+      "professional_tax": {"bsonType": "double"},
+      "income_tax": {"bsonType": "double"},
+      "insurance": {"bsonType": "double"},
+      "paid_date": {"bsonType": "string"},
+      "paid_month": {"bsonType": "string"}
+    },
+    "required": ["user_id"]
+  },
+  "leave_request_collection": {
+    "bsonType": "object",
+    "properties": {
+        "user_id": {"bsonType": "string"},
+        "leave_type": {"bsonType": "string"},
+        "start_date": {"bsonType": "string"},
+        "end_date": {"bsonType": "string"},
+        "description": {"bsonType": "string"},
+        "attachment": {"bsonType": ["string", "null"]},
+        "is_notified": {"type" : "boolean"},
+        "status": {"bsonType": "string", "enum": ["pending", "accepted", "rejected", "in_review"]},
+        "username": {"bsonType": "string"},
+        "email": {"bsonType": "string"},
+        "timestamp":{"bsonType": "string"},
+        "imageurl": {"bsonType":"string"},
+        "clear":{"type": "boolean" }
+    },
+    "required": ["user_id", "leave_type", "start_date", "end_date", "is_notified", "status","username"]
+  },
+  "leavetypes_collection": {
+    "bsonType": "object",
+    "properties": {
+      "leave_type": {"bsonType": "string"},
+      "count": {"bsonType": "int"}
+    },
+    "required": ["leave_type","count"]
+},
+"timesheet_collection": {
+  "bsonType": "object",
+  "properties": {
+    "user_id": {"bsonType": "string"},
+    "checkin_time": {"bsonType": "string"},
+    "checkout_time": {"bsonType": "string"},
+    "date":{"bsonType":"string"}, 
+    "break_time": {"bsonType":"int"},
+    "worked_hours":{"bsonType":"double"},
+    "is_checked_in":{"bsonType" : "string", "enum":["true","false"]}
+  },
+  "required": ["user_id","date"]
+},
+
+"reimbursement_collection": {
+  "bsonType": "object",
+  "properties": {
+    "reimbursement_id": {"bsonType": "string"},
+    "employeeName": {"bsonType": "string"},
+    "employeeId": {"bsonType": "string"},
+    "department": {"bsonType": "string"},
+    "reimbursement_type": { "bsonType": "string" },
+    "expenses": {
+      "bsonType": "array",
+      "items": {
+        "bsonType": "object",
+        "properties": {
+          "expense_id": {"bsonType": "string"},
+          "date": { "bsonType": "string" },
+          "categories": {
+            "bsonType": "array",
+            "items": {"bsonType": "string"}
+          },
+          "description": {"bsonType": "string"},
+          "amount": { "bsonType": "double" },
+          "status": {
+            "bsonType": "string",
+            "enum": ["pending", "approved", "rejected", "in_review"]
+          },
+          "attachments": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object",
+              "properties": {
+                "filename": { "bsonType": "string" },
+                "content_type": { "bsonType": "string" },
+                "content": { "bsonType": "string" },
+                "size": { "bsonType": "string" },
+                "date": { "bsonType": "string" }
+              },
+              "required": ["filename", "content_type", "content"]
+            }
+          }
+        },
+        "required": ["expense_id", "date", "amount", "status"]
+      }
+    },
+    "totalAmount": { "bsonType": "double" },
+    "created_at": { "bsonType": "string" },
+    "organization_name": { "bsonType": "string" },
+    "org_slug": { "bsonType": "string" },
+    "status": {
+      "bsonType": "string",
+      "enum": ["pending", "approved", "rejected", "in_review", "partial"]
+    },
+    "approver_comments": { "bsonType": "string" }
+  },
+  "required": ["reimbursement_id", "employeeId", "employeeName","reimbursement_type", "expenses", "totalAmount","created_at","organization_name","org_slug", "status"]
+},
+
+"holidays": {
+  "bsonType": "object",
+  "properties": {
+  "event": {"bsonType": "string"},
+  "date": {"bsonType": "string"},
+  "holiday_type": {"bsonType": "string"},
+  "org_slug": {"bsonType": "string"}
+  },
+  "required": ["date","summary","holiday_type","org_slug"]
+  },
+  "job_collection": {
+    "bsonType": "object",
+    "properties": {
+      "title": { "bsonType": "string" },
+      "description": { "bsonType": "string" },
+      "skills": { "bsonType": "string" },
+      "experience": { "bsonType": "string" },
+      "workmode": { "bsonType": "string" },
+      "location": { "bsonType": "string" },
+      "deadline": { "bsonType": "string" }
+    },
+    "required": ["title", "description", "skills", "experience", "location", "workmode", "deadline"]
+  },
+  "referral_collection": {
+    "bsonType": "object",
+    "properties": {
+      "job_id": { "bsonType": "string" },
+      "name": { "bsonType": "string" },
+      "email": { "bsonType": "string" },
+      "resume": { "bsonType": "string" },
+      "referral_name": { "bsonType": "string" },
+      "referral_id": { "bsonType": "string" }
+    },
+    "required": ["name", "email", "resume", "job_id"]
+  },
+  "notification_collection": {
+  "bsonType": "object",
+  "properties": {
+    "collectionName": { "bsonType": "string" },
+    "user_id": { "bsonType": "string" },
+    "message": { "bsonType": "string" },
+    "timestamp": { "bsonType": "date" },
+    "type": { "bsonType": "string" },
+    "is_admin_notified": { "bsonType": "bool" },
+    "is_admin_desktop_notified": { "bsonType": "bool" },
+    "admin_clear": { "bsonType": "bool" },
+    "org_slug": { "bsonType": "string" }
+  },
+  "required": [
+    "user_id",
+    "message",
+    "timestamp",
+    "type",
+    "is_admin_notified",
+    "is_admin_desktop_notified",
+    "admin_clear",
+    "org_slug"
+  ]
+}
+}

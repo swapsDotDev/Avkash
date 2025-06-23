@@ -1,0 +1,247 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  max-width: none;
+}
+.content {
+ flex: 1;
+  overflow:visible;
+ width: 100%;
+}
+.navbar {
+  padding: 0 1rem;
+}
+.notification {
+  background-color: rgb(50, 53, 205);
+}
+.avkash {
+  color: limegreen;
+}
+.sidebar-wrapper {
+  border-right: 1px solid #ccc;
+}
+.full-height-sidebar {
+  height: 100vh; 
+}
+ .pagination .page-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 1px solid #090cb5;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  }
+  .active-page{
+    display: flex;
+    color: rgb(156, 156, 156);
+  }
+  .pagination .page-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20%;
+  background-color: transparent;
+  color: rgb(58, 58, 58);
+  font-weight: bold;
+  text-decoration: none;
+  }
+  .custom-pagination {
+    color:rgb(153, 153, 153);
+  }  
+  .custom-pagination-disabled {
+    opacity: 1.5;
+  }
+  .previous-page,
+  .next-page {
+    line-height: 2;
+  }
+.AlertDialogOverlay {
+  background-color: var(--black-a9);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.AlertDialogContent {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 500px;
+  max-height: 85vh;
+  padding: 25px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.AlertDialogContent:focus {
+  outline: none;
+}
+.crosscircleclose{
+  background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top:23px;
+}
+ .crosscircleform{
+    background: none;
+    border: none;
+    cursor: pointer;
+    right: 20px;
+    top:20px;
+} 
+.AlertDialogTitle {
+  margin: 0;
+  color: var(--mauve-12);
+  font-size: 17px;
+  font-weight: 500;
+}
+.AlertDialogDescription {
+  margin-bottom: 20px;
+  color: var(--mauve-11);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  height: 35px;
+}
+.Button.violet:hover {
+  background-color: var(--mauve-3);
+}
+.Button.violet:focus {
+  box-shadow: 0 0 0 2px black;
+}
+.Button.close {
+  background-color: var(--red-4);
+  color: var(--red-11);
+}
+.Button.close:hover {
+  background-color: var(--red-5);
+}
+.Button.close:focus {
+  box-shadow: 0 0 0 2px var(--red-7);
+}
+.Button.mauve {
+  background-color: var(--mauve-4);
+  color: var(--mauve-11);
+}
+.Button.mauve:hover {
+  background-color: var(--mauve-5);
+}
+.Button.mauve:focus {
+  box-shadow: 0 0 0 2px var(--mauve-7);
+}
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.Holoday{
+  justify-content: center;
+  border-bottom: 1px solid #ecececb7;
+  width: 140%;
+}
+.Head{
+  font-size: x-large;
+  font-weight: bold;
+  padding-bottom: 30px;  
+}
+.Card{
+  height: 140px;
+  overflow: hidden;
+}
+.one{
+font-Size: 1.1rem;
+font-Weight: bold;
+padding-left: 60px;
+}
+.oned{
+  font-size:16px;
+  padding-left: 66px;
+}
+.dialog{
+  width: 100%;
+  height: 650px; 
+  overflow-y: scroll; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+.bx{
+  max-height: 650px - 40px;
+  overflow:hidden;
+  padding-right: 10px;
+}
+hr{
+  
+  margin-left: 60px;
+  padding-bottom: 15px; 
+  margin-top: 15px; 
+}
+.box{
+  display: inline-flex;
+  width:40px;
+  height:40px ;
+  margin-left:1px;
+}
+.title{
+  float: inline-start;
+  font-size: 28px;  
+}
+.txt{
+  margin-left: 1.188rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.063rem;
+  font-size: 1rem;
+  padding-left: 40px;
+  font-weight: bold; 
+}
+.txt1{
+  font-size: 1rem;
+  padding-left: 50px;
+  font-weight: bold;
+}
+.bsx{
+  width:6px;
+  margin-top:1px;
+  height:2px;
+  margin-left:1px;
+}
+.enlarged {
+  transform: scale(1.1);
+}
+.delete-button {
+  padding: '10px';
+  border-radius: '10px';
+}

@@ -1,0 +1,128 @@
+.react-calendar__tile {
+  font-weight: bold;
+  padding: 7px;
+  border: 1px solid #ccc3c3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  width: 14.5vw; 
+  overflow-x: scroll;
+  height: 14.5vh; 
+}
+
+.react-calendar__navigation__label {
+  font-size: 1.5rem;   
+}
+
+.react-calendar__navigation__arrow {
+  font-size: 1.625rem;  
+  visibility: hidden;
+  margin-right: 6px;
+  margin-left: 6px; 
+}
+
+.react-calendar__navigation__prev-button,
+.react-calendar__navigation__next-button {
+  visibility: visible;
+}
+
+.holiday-date {  
+  color: rgb(236, 71, 71);
+}
+
+.react-calendar {  
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: center;
+  align-items: center;
+  padding: 1px 15px 15px;
+  height: auto;
+  background-color: white;
+  border-radius: 0.4rem;
+}
+
+.react-calendar__tile--now { 
+  background-color: #82aadd;
+  color: #fff;
+} 
+
+.react-calendar__month-view__weekdays__weekday {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  border: 1px solid #cec9c9;
+  border-radius: 5px 5px 0 0;
+  background: var(--weekday-bg-color, rgb(229, 231, 235));
+  color: var(--weekday-text-color, black);
+}
+
+:root {
+  --weekday-bg-color: rgb(209, 213, 219);
+  --weekday-text-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --weekday-bg-color: rgb(31, 41, 55);
+    --weekday-text-color: white;
+  }
+}
+
+.dark {
+  --weekday-bg-color: rgb(31, 41, 55);
+  --weekday-text-color: white;
+}
+
+[data-theme="dark"] {
+  --weekday-bg-color: rgb(31, 41, 55);
+  --weekday-text-color: white;
+}
+
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  .react-calendar__tile {
+    font-size: 1rem; 
+    height: 14.5vh;
+  }
+  .react-calendar__navigation__label {
+    font-size: 1.4rem;
+  }
+  .react-calendar__navigation__arrow {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .react-calendar__tile {
+    font-size: 0.875rem;
+    height: 15vh; 
+  }
+  .react-calendar__navigation__label {
+    font-size: 1.2rem;
+  }
+  .react-calendar__navigation__arrow {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .react-calendar__tile {
+    font-size: 0.75rem;
+    height: 10vh; 
+  }
+  .react-calendar__navigation__label {
+    font-size: 0.75rem;
+  }
+  .react-calendar__navigation__arrow {
+    font-size: 0.75rem;
+  }
+}
+
+
