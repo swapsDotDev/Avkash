@@ -75,5 +75,3 @@ if __name__ == "__main__":
         ws_ping_interval=30,
         ws_ping_timeout=30,
     )
-
-
