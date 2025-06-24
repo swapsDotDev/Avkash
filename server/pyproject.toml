@@ -7,7 +7,7 @@ description = "FastAPI backend for Avkash HRMS with MongoDB Atlas integration"
 authors = [
     {name = "username",email = "emailid@domain.com"}
 ]
-requires-python = ">=3.10,<=3.13.3"
+requires-python = ">=3.10,<=3.13.4"
 dependencies = [
     "uvicorn[standard]>=0.34.2,<0.35.0",
     "pymongo[srv] (>=4.13.0,<5.0.0)",
