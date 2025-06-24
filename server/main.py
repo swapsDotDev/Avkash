@@ -65,13 +65,15 @@ app.include_router(documents_router)
 app.include_router(websocket_router)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))  # default to 8000 for local
+    port = int(os.environ.get("PORT", 8000))
+    reload = os.environ.get("RENDER") is None  # Only reload locally
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
         port=port,
-        reload=True,
+        reload=reload,
         ws_ping_interval=30,
         ws_ping_timeout=30,
     )
+
 
