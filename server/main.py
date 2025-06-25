@@ -22,14 +22,21 @@ from routes.user_info.user_info import router as user_info_router
 from routes.document.document import router as documents_router
 from websocket.websocket import router as websocket_router
 
-load_dotenv()
+print("Starting FastAPI server...")
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+load_dotenv()
+print("Loaded .env")
 
 app = FastAPI()
-md = MogoConnection()
-md.get_conn()
+print("Created FastAPI app")
+
+try:
+    md = MogoConnection()
+    print("Created MogoConnection")
+    md.get_conn()
+    print("Got DB connection")
+except Exception as e:
+    print(f"Error during DB connection: {e}")
 
 CORS_ALLOW_ORIGINS = os.getenv("CORS_ALLOW_ORIGINS", "http://localhost:3000")
 
