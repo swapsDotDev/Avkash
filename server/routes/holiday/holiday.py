@@ -1,5 +1,4 @@
 import io
-from turtle import pd
 from fastapi import (
     APIRouter,
     HTTPException,
