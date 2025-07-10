@@ -5,7 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from connection.conn import MogoConnection
 import uvicorn
 import logging
-
 from routes.noticeboard.noticeboard import router as noticeboard_router
 from routes.reimbursement.reimbursement import router as reimbursement_router
 from routes.referral.referral import router as referral_router
@@ -29,16 +28,16 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
-
 md = MogoConnection()
 md.get_conn()
 
 CORS_ALLOW_ORIGINS = os.getenv("CORS_ALLOW_ORIGINS", "http://localhost:3000")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[CORS_ALLOW_ORIGINS],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["*"],
 )
 
@@ -67,11 +66,12 @@ app.include_router(websocket_router)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
+    reload = os.environ.get("RENDER") is None  # Only reload locally
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
         port=port,
-        reload=True,
+        reload=reload,
         ws_ping_interval=30,
         ws_ping_timeout=30,
     )
