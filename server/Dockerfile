@@ -19,6 +19,7 @@ RUN pip install poetry
 COPY pyproject.toml poetry.lock* /app/
 
 # Install dependencies (no dev dependencies)
+RUN pip install torch==2.2.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
 RUN poetry config virtualenvs.create false \
   && poetry install --no-interaction --no-ansi --only main
 
